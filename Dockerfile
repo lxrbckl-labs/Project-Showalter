@@ -58,6 +58,6 @@ EXPOSE 5827
 
 # Healthcheck hits the route handler. `wget` ships with alpine by default.
 HEALTHCHECK --interval=30s --timeout=5s --start-period=20s --retries=3 \
-  CMD wget --quiet --spider --tries=1 http://localhost:5827/api/health || exit 1
+  CMD wget --quiet --spider --tries=1 http://127.0.0.1:5827/api/health || exit 1
 
 CMD ["node", "server.js"]
